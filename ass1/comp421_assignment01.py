@@ -20,7 +20,7 @@ from tensorflow.keras.utils import  plot_model
 import scprep
 !rm -rf ./logs/
 
-EPOCHS = 1000
+EPOCHS = 500
 TRAIN_BUF = 1000
 TEST_BUF = 300
 BATCH_SIZE = 100
@@ -53,7 +53,7 @@ model.add(tf.keras.layers.Dense(units=10, activation='relu', input_shape=(3,)))
 model.add(tf.keras.layers.Dense(units=10, activation='relu'))
 model.add(tf.keras.layers.Dense(units=3, activation='linear'))
 
-model.compile(loss='mean_absolute_error',
+model.compile(loss='mean_squared_error',
               optimizer=tf.keras.optimizers.Adam(1e-3),
               metrics=['accuracy'])
 
